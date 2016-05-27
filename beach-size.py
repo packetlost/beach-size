@@ -15,14 +15,24 @@ def format_as_percent(float):
     float *= 100
     return str(float) + "%"
 
+# variable to hold the maximum value of N, k, and n
+max = 0
 
+# gets user input re: size and number of tables
+# rejects non-integer, and non-positive values
+while max <= 0:
+    try:
+        max = int(input("Choose a max value for N: "))
+    except ValueError:
+        print("Please enter a positive integer.")
+    if max < 0:
+        print("Please enter a positive integer.")
 
-# set these all up as lists from 1 to 41
-max = 101
-file_shards = range(1,max)
+# make a range whose final value is max
+file_shards = range(1,max+1)
 
 # open a csvfile to dump the results into
-with open('results'+ str(max-1) + '.csv', 'wb') as csvfile:
+with open('results'+ str(max) + '.csv', 'wb') as csvfile:
     writer = csv.writer(csvfile, delimiter='\t')
 
     # the number of shards in a file is fixed for a table
@@ -32,8 +42,8 @@ with open('results'+ str(max-1) + '.csv', 'wb') as csvfile:
         # set up a network size
         # set up a number of draws
         # they can't be less than x
-        network_size = range(x, max)
-        number_of_draws = range(x, max)
+        network_size = range(x, max+1)
+        number_of_draws = range(x, max+1)
 
         # set up each table with a header 
         writer.writerow(["shards in the file:", x])

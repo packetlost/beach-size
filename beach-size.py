@@ -42,8 +42,8 @@ with open('results'+ str(max) + '.csv', 'wb') as csvfile:
         # set up a network size
         # set up a number of draws
         # they can't be less than x
-        network_size = range(x, max)
-        number_of_draws = range(x, max)
+        network_size = range(x, max+1)
+        number_of_draws = range(x, max+1)
 
         # set up each table with a header 
         writer.writerow(["shards in the file:", x])

@@ -1,6 +1,6 @@
 # beach-size
 
-**Because this script performs a many factorials, please consider your CPU before inputting large values**
+**Because this script performs many factorials (and is poorly optimized), please consider your CPU before inputting large values**
 
 This is a quick-and-dirty script to describe the difficulty of locating a file on a distributed storage network without information regarding the locations of its shards. It computes the probability of locating all the shards of a file with a number of random non-repeating draws from a network containing a given number of shards.
 
